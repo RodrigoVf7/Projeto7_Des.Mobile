@@ -1,33 +1,22 @@
 package br.edu.fateczl.contabancaria;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-/*
- * Nome: [Seu Nome]
- * RA: [Seu RA]
- */
-
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
+/*
+ *@author: RODRIGO VINICIUS FERRAZ DA SILVA
+ *@RA: 1110482313043
+ */
 public class MainActivity extends AppCompatActivity {
 
     private EditText editCliente, editNumConta, editSaldoInicial, editValorOperacao;
     private TextView txtSaldoAtual;
-    private RadioGroup radioGroupContaTipo;
     private ContaBancaria conta;
 
     @Override
@@ -41,14 +30,13 @@ public class MainActivity extends AppCompatActivity {
         editSaldoInicial = findViewById(R.id.editSaldoInicial);
         editValorOperacao = findViewById(R.id.editValorOperacao);
         txtSaldoAtual = findViewById(R.id.txtSaldoAtual);
-        radioGroupContaTipo = findViewById(R.id.radioGroupContaTipo);
+        RadioGroup radioGroupContaTipo = findViewById(R.id.radioGroupContaTipo);
 
         Button btnCriarConta = findViewById(R.id.btnCriarConta);
         Button btnSacar = findViewById(R.id.btnSacar);
         Button btnDepositar = findViewById(R.id.btnDepositar);
         Button btnCalcularSaldoPoupanca = findViewById(R.id.btnCalcularSaldoPoupanca);
 
-        // Listener para criar conta
         btnCriarConta.setOnClickListener(v -> criarConta());
 
         // Listener para saque
@@ -89,9 +77,11 @@ public class MainActivity extends AppCompatActivity {
         float saldoInicial = Float.parseFloat(editSaldoInicial.getText().toString());
 
         if (((RadioButton) findViewById(R.id.radioContaPoupanca)).isChecked()) {
-            conta = new ContaPoupanca(cliente, numConta, saldoInicial, 1); // Exemplo dia de rendimento
+            // Exemplo dia de rendimento
+            conta = new ContaPoupanca(cliente, numConta, saldoInicial, 1);
         } else if (((RadioButton) findViewById(R.id.radioContaEspecial)).isChecked()) {
-            conta = new ContaEspecial(cliente, numConta, saldoInicial, 1000); // Exemplo de limite
+            // Exemplo de limite
+            conta = new ContaEspecial(cliente, numConta, saldoInicial, 1000);
         }
 
         atualizarSaldo();
