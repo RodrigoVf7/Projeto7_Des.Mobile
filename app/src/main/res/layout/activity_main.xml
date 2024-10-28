@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/radioGroupContaTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioContaPoupanca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conta Poupança" />
+
+        <RadioButton
+            android:id="@+id/radioContaEspecial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conta Especial" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:hint="Nome do Cliente" />
+
+    <EditText
+        android:id="@+id/editNumConta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:hint="Número da Conta"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editSaldoInicial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:hint="Saldo Inicial"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editValorOperacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:hint="Valor da Operação"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnCriarConta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar Conta" />
+
+    <Button
+        android:id="@+id/btnSacar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sacar" />
+
+    <Button
+        android:id="@+id/btnDepositar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Depositar" />
+
+    <Button
+        android:id="@+id/btnCalcularSaldoPoupanca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Saldo Poupança" />
+
+    <TextView
+        android:id="@+id/txtSaldoAtual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saldo Atual: "
+        android:textSize="18sp"
+        android:paddingTop="16dp"/>
+</LinearLayout>
+
